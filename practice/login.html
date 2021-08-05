@@ -6,21 +6,21 @@
 <input type="text" id="asd" name="asd" />
 <label for="zxc">NEW password: </label>
 <input type="password" id="zxc" name="zxc" />
-<input type="button" name="reg" value="È¸¿ø°¡ÀÔ" />
+<input type="button" name="reg" value="íšŒì›ê°€ì…" />
 <br/>
 <br/>
 <label for="myId">ID: </label>
 <input type="text" id="myId" name="myId" />
 <label for="pwd">password: </label>
 <input type="password" id="pwd" name="pwd" />
-<input type="button" name="send" value="·Î±×ÀÎ" />
+<input type="button" name="send" value="ë¡œê·¸ì¸" />
 
 </form>	
 <script>
-var frm = document.frm;             // form °´Ã¼ ÁöÁ¤
-var myId = frm.myId;                // myId °´Ã¼ ÁöÁ¤
+var frm = document.frm;             // form ê°ì²´ ì§€ì •
+var myId = frm.myId;                // myId ê°ì²´ ì§€ì •
 var pwd = frm.pwd;
-var send_btn = document.frm.send;   // Àü¼Û ¹öÆ° °´Ã¼ ÁöÁ¤
+var send_btn = document.frm.send;   // ì „ì†¡ ë²„íŠ¼ ê°ì²´ ì§€ì •
 
 var reg_btn = document.frm.reg;
 var asd = frm.asd;                
@@ -29,14 +29,14 @@ var zxc = frm.zxc;
 reg_btn.onclick = function(){
 a = asd.value,
 b = zxc.value;
-alert('È¸¿ø°¡ÀÔ ¿Ï·á.')}
+alert('íšŒì›ê°€ì… ì™„ë£Œ.')}
 
 send_btn.onclick = function(){
 var newId = myId.value,
 newPwd = pwd.value;
 		  if(newId != a || newPwd != b){
-		    alert('¾ÆÀÌµğ ¶Ç´Â ºñ¹Ğ¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê¾Ò½À´Ï´Ù!');
+		    alert('ì•„ì´ë”” ë˜ëŠ” ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤!');
 		  } else if(newId == a && newPwd == b){
-		    alert(myId.value + '´Ô È¯¿µÇÕ´Ï´Ù!');}};	
+		    alert(myId.value + 'ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤!');}};	
 </script>
 </body>
