@@ -4,19 +4,33 @@
 <br/>
 <br/>
 <body><form name="frm">
-<input type="button" name="go" value="Let Go" />
+<input type="button" name="go" value="Lets Go" />
+<br/>
+<input type="button" name="go2" value="Lets Go2" />
+<br/>
+<input type="button" nago_btn3" value="Lets Go3" />
 </form>	
 <script>
 var go_btn = document.frm.go; 
 var x=0
-
 go_btn.onclick = function(){
 alert('go?')
-document.write('<a href="0/">페이지가기</a>')
-document.write('<br/'>)
-document.write('<a href=x+/>페이지가기2</a>')
+document.write('<a href=x+/>페이지가기</a>')
 }
 
+var go2_btn = document.frm.go2; 
+var y='0'
+go2_btn.onclick = function(){
+alert('go?')
+document.write('<a href=y+/>페이지가기</a>')
+}
+
+var go3_btn = document.frm.go3; 
+var z="0"
+go3_btn.onclick = function(){
+alert('go?')
+document.write('<a href=z+"/">페이지가기</a>')
+}
 </script>
 </body>
 </html>
