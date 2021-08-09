@@ -16,7 +16,9 @@
 <label for="pwd">| password: </label>
 <input type="password" id="pwd" name="pwd" />
 <input type="button" name="send" value="로그인" />
-
+<br/>
+<br/>
+<input type="button" name="go" value="Go" />
 </form>	
 <script>
 var frm = document.frm;             // form 객체 지정
@@ -27,6 +29,12 @@ var send_btn = document.frm.send;   // 전송 버튼 객체 지정
 var reg_btn = document.frm.reg;
 var asd = frm.asd;                
 var zxc = frm.zxc;
+
+var go_btn = document.frm.go; 
+
+login_btn.onclick = function(){
+<a href="1/">페이지가기</a>
+}
 
 reg_btn.onclick = function(){
 a = asd.value,
