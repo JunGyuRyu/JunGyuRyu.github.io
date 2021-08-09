@@ -56,10 +56,13 @@ if(x==0){
     alert(myId.value + ' welcome')
     document.write('<a href="javascript:history.back()"class="btn btn-primary">돌아가기</a>')
     document.write('<br/>')
-    document.write('<a href="0/">페이지가기</a>')
-    
+      if(i==0){
+       document.write('<a href="0/">페이지 이동하기<a>')}
+      else if(i==1){
+       document.write('<a href="1/">페이지 이동하기<a>')}
+      else if(i==2){
+       document.write('<a href="2/">페이지 이동하기<a>')}
 }}
-
 </script>
 </body>
 </html>
