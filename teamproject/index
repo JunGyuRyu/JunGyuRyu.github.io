@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <body><form name="frm">
 
 <label for="regid">NEW ID: </label>
@@ -56,3 +58,4 @@ if(x==0){
 
 </script>
 </body>
+</html>
