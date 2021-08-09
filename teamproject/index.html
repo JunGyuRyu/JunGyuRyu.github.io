@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
+<a href="javascript:history.back()"class="btn btn-primary">돌아가기</a>
 <body><form name="frm">
-
+<br/>
+<br/>
 <label for="regid">NEW ID: </label>
 <input type="text" id="regid" name="regid" />
 <label for="regpw">| NEW password: </label>
@@ -52,9 +54,10 @@ if(x==0){
     alert('wrong')
 }else{
     alert(myId.value + ' welcome')
-    document.write('<a href="1/">페이지가기</a>')
-    document.write('<br/')
     document.write('<a href="javascript:history.back()"class="btn btn-primary">돌아가기</a>')
+    document.write('<br/>')
+    document.write('<a href="1/">페이지가기</a>')
+    
 }}
 
 </script>
