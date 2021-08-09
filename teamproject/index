@@ -1,7 +1,57 @@
-<h1>hi</h1>
+<body><form name="frm">
+
+<label for="regid">NEW ID: </label>
+<input type="text" id="regid" name="regid" />
+<label for="regpw">| NEW password: </label>
+<input type="password" id="regpw" name="regpw" />
+<input type="button" name="reg" value="SIGN IN" />
 <br/>
-<a href="1/">유저1</a>
 <br/>
-<a href="2/">유저2</a>
-<br/>
-<a href="3/">유저3</a>
+<label for="myId">ID: </label>
+<input type="text" id="myId" name="myId" />
+<label for="pwd">| password: </label>
+<input type="password" id="pwd" name="pwd" />
+<input type="button" name="login" value="LOG IN" />
+</form>	
+
+<script>
+var frm = document.frm;            
+var myId = frm.myId;                
+var pwd = frm.pwd;
+var login_btn = document.frm.login;
+var reg_btn = document.frm.reg;
+var regid = frm.regid;                
+var regpw = frm.regpw;
+var i=0
+var c=[0]
+var d=[0]
+c[99]=0
+d[99]=0
+
+reg_btn.onclick = function(){
+a = regid.value;
+b = regpw.value;
+c[i] = a
+d[i] = b
+alert(c[i])
+alert('Sign up complete.')
+i+=1;
+}
+
+login_btn.onclick = function(){
+var newId = myId.value;
+var newPwd = pwd.value;
+var x=0;
+for(var k=0;k<i;k++){
+    if(newId==c[k] && newPwd == d[k]){
+        x=+1}}
+        
+if(x==0){
+    alert('wrong')
+}else{
+    alert(myId.value + ' welcome')
+    <a href=i+1"/">페이지 가기</a>
+}}
+
+</script>
+</body>
