@@ -31,7 +31,6 @@ var c=[0]
 var d=[0]
 c[99]=0
 d[99]=0
-var j=0
 
 reg_btn.onclick = function(){
 a = regid.value;
@@ -46,8 +45,10 @@ i+=1;
 login_btn.onclick = function(){
 var newId = myId.value;
 var newPwd = pwd.value;
-var x=0;
-for(var k=0;k<i;k++){
+var x=0
+var j=0
+var k=0
+for(k=0;k<i;k++){
     if(newId==c[k] && newPwd == d[k]){
         x=+1;
         j=k;}
