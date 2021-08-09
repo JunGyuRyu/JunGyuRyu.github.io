@@ -50,6 +50,7 @@ if(x==0){
     alert('wrong')
 }else{
     alert(myId.value + ' welcome')
+    <br/>
     <a href="1/">페이지가기</a>
 }}
 
