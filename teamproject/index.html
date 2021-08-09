@@ -31,7 +31,7 @@ var c=[0]
 var d=[0]
 c[99]=0
 d[99]=0
-var k=0
+var j=0
 
 reg_btn.onclick = function(){
 a = regid.value;
@@ -47,21 +47,22 @@ login_btn.onclick = function(){
 var newId = myId.value;
 var newPwd = pwd.value;
 var x=0;
-for(k=0;k<i;k++){
+for(var k=0;k<i;k++){
     if(newId==c[k] && newPwd == d[k]){
-        x=+1}}
-        
+        x=+1}
+    else{
+        j+=1}}
 if(x==0){
     alert('wrong')
 }else{
     alert(myId.value + ' welcome')
     document.write('<a href="javascript:history.back()"class="btn btn-primary">돌아가기</a>')
     document.write('<br/>')
-      if(k==0){
+      if(j==0){
        document.write('<a href="0/">페이지 이동하기0<a>')}
-      else if(k==1){
+      else if(j==1){
        document.write('<a href="1/">페이지 이동하기1<a>')}
-      else if(k==2){
+      else if(j==2){
        document.write('<a href="2/">페이지 이동하기2<a>')}
 }}
 </script>
