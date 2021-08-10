@@ -1,0 +1,65 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+
+		// 1. 어떠한 Driver를 사용할 것인지 동적 로딩
+		// 2. 해당 DBMS에 관련된 Driver 클래스 파일을 작성한다.
+		Class.forName("oracle.jdbc.driver.OracleDriver"); // 오라클 드라이버의 경로 작성 : 오라클 드라이버를 사용하겠다는 선언
+		// OracleDriver라는 클래스 파일 실행(대문자로 시작, 패키지는 폴더이므로 소문자로 시작)
+		// jsp는 기본적으로 예외처리가 되어있어 따로 작성하지 않아도 됨
+
+		// 3. Java Program과 DataBase를 연결하는 Connection 객체 생성
+		String db_url = "jdbc:oracle:thin:@localhost:1521:xe";
+		// 하단 Data Source Explorer New Oracle 더블클릭 실행 > 우클릭 Properties > DriverProperties > Connection URL 복사
+		String db_id = "hr";
+		String db_pw = "hr";
+
+		Connection conn = DriverManager.getConnection(db_url, db_id, db_pw); // Connection 자동완성(Connection.sql), DriverManager 자동완성(import)
+
+		String sql = "select * from mymember where id = ? and pw = ?";
+		PreparedStatement psmt = conn.prepareStatement(sql);
+		psmt.setString(1, id);
+		psmt.setString(2, pw);
+		ResultSet rs = psmt.executeQuery(); // 표 형태로 데이터와 커서를 가지고 있는 ResultSet 객체
+
+		String l_id = null;
+		String l_pw = null;
+		String l_tel = null;
+
+		if (rs.next()) {
+			// 커서를 한 칸 다음으로 내릴 수 있다는 것은 로그인을 성공했다.
+			//String l_id = rs.getString("id");  // DB로 가져오고 싶은 컬럼이름
+			l_id = rs.getString(1); // 또는 1번 째 컬럼
+			l_pw = rs.getString(2); // 2번 째 컬럼
+			l_tel = rs.getString(3); // 3번 째 컬럼
+			// 로그인이 성공하면 l_id, l_pw, l_tel 값은 null이 아니게 됨
+		}
+
+		if (rs != null)
+			rs.close();
+		if (psmt != null)
+			psmt.close();
+		if (conn != null)
+			conn.close();
+
+		if (l_id != null) {
+			response.sendRedirect("loginSuccess.jsp?id=" + l_id);
+		} else {
+			response.sendRedirect("login.jsp");
+		}
+	%>
+</body>
+</html>
