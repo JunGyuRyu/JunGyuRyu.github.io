@@ -58,12 +58,17 @@ if(x==0){
     alert(myId.value + ' welcome')
     document.write('<a href="javascript:history.back()"class="btn btn-primary">돌아가기</a>')
     document.write('<br/>')
-      if(j==0){
-      location.href="0/"}
-      else if(j==1){
-       location.href="1/"}
-      else if(j==2){
-       location.href="2/")}
+      switch(j) {
+    case 0 :
+  location.href="0/"
+break;
+    case 1 :
+  location.href="1/"
+break;
+    case 2 :
+  location.href="2/"
+break;
+default : alert('존재하지않음')}
 }}
 </script>
 </body>
