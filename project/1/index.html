@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>MHDP Full Calendar</title>
+</head>
+<body>
+<div id="name">
+<table height=100px width=100% style="border-collapse: collapse;text-align:center">
+  <tr ><th ><font size="100%" color="orange">D n C</font></th></tr></table></div>
+
+  <div class="calendar">
+    <div class="header">
+      <div class="year-month"></div>
+      <div class="nav">
+        <button class="nav-btn go-prev" onclick="prevMonth()">&lt;</button>
+        <button class="nav-btn go-today" onclick="goToday()">Today</button>
+        <button class="nav-btn go-next" onclick="nextMonth()">&gt;</button>
+      </div>
+    </div>
+    <div class="main">
+      <div class="days">
+        <div class="day">일</div>
+        <div class="day">월</div>
+        <div class="day">화</div>
+        <div class="day">수</div>
+        <div class="day">목</div>
+        <div class="day">금</div>
+        <div class="day">토</div>
+      </div>
+      <div class="dates"></div>
+    </div>
+  </div>
+  
+  <br/>
+  
+  <table height=200px width=200px style="border-collapse: collapse;text-align:center; float: right;">
+<tr>
+  <td style="border: 2px solid #000;">people num1</td>
+  <th style="border: 2px solid #000;">n% 완료</th>
+    </tr>
+<tr>
+  <td style="border: 2px solid #000;">people num2</td>
+  <th style="border: 2px solid #000;">n% 완료</th>
+    </tr>
+<tr>
+  <td style="border: 2px solid #000;">people num3</td>
+  <th style="border: 2px solid #000;">n% 완료</th>
+    </tr>
+<tr>
+  <td style="border: 2px solid #000;">people num4</td>
+  <th style="border: 2px solid #000;">n% 완료</th>
+    </tr>
+<tr>
+  <td style="border: 2px solid #000;">people num5</td>
+  <th style="border: 2px solid #000;">n% 완료</th>
+    </tr></table>
+  <script src="index.js"></script>
+  
+  <p>
+ <div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://new1-4.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</p>
+  
+</body>
+</html>
