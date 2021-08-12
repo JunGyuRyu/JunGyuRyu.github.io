@@ -1,0 +1,57 @@
+	*{ margin: 0; }
+	body{ 
+		padding: 300px 50px;
+		/*background: #999; */
+	}
+	#banner_wrap{
+		position: relative;
+		width: 600px;
+	}
+
+	/* 배너 표시 상태 */
+	#banner.active{
+	    height: 190px;
+	    border: 1px solid #ccc;
+	}
+
+	/* 배너 비표시 상태 */	
+	#banner{
+	    width:600px;
+	    height: 0px;
+	    position: relative;
+	    overflow: hidden;
+	    background: url('images/bg.png');
+	    border-bottom: 1px solid #666;
+	    border-top: 1px solid #ccc;
+	    box-sizing: border-box;
+	    transition-duration: 0.5s;
+	}
+	#banner:hover{
+		cursor: pointer;
+	}
+	#banner img{
+	    display: block;
+	    position: absolute;
+	}
+
+	/* 사운드 on/off 버튼 */
+	#sound_btn{
+		position: absolute;
+		left: 10px; bottom: 10px;
+		outline: none;
+	}
+
+	/* 배너 닫기/열기 버튼 */
+	#toggle{
+		position: absolute;
+		right: 0; 
+		bottom: -18px;
+		background: #666;
+		color: white;
+		font-size: 12px; 
+		line-height: 18px;
+		padding: 0 5px;
+		text-decoration: none;
+	}
+	#toggle:hover{ text-decoration: underline; }
+	
