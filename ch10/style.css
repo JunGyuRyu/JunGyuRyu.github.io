@@ -21,8 +21,6 @@
 	    position: relative;
 	    overflow: hidden;
 	    background: url('images/bg.png');
-	    border-bottom: 0px solid #666;
-	    border-top: 0px solid #ccc;
 	    box-sizing: border-box;
 	    transition-duration: 0.5s;
 	}
