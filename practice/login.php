@@ -12,7 +12,7 @@ if($res -> num_rows > 0 ){
 $_SESSION['id'] = $id;
 $_SESSION['nickname'] = $row["nickname"];
 if(isset($_SESSION['id'])&&isset($_SESSION['nickname'])){
-echo "<script>location.href='main.php';</script>";
+echo "<script>location.href='index.php';</script>";
 }else{
 echo"<script>alert('로그인 실패!')</script>";
 }
