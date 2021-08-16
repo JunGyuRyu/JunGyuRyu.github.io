@@ -4,113 +4,202 @@
 	  border: 3px solid #000;
 	}
 
-* {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Epilogue', sans-serif;
 }
 
-body {
-  
-  justify-content: center;
-  align-items: center;
-  min-height: 100px;
+.clearfix::after{
+    content: ' ';
+    display: block;
+    clear: both;
 }
 
-.calendar {
-  width: 50%;
-  margin: 20px;
-  float:left;
+li{
+    list-style: none;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+body{
+    background: rgb(245, 241, 241);
+    
 }
 
-.year-month {
-  font-size: 30px;
+.main{
+    float: left;
+    background: Skyblue;
+    background: linear-gradient(74deg, Skyblue 9%, rgba(149,175,213,1) 100%);
+    width: 698px;
+    margin: 30px auto 0;
+    padding: 10px 0px 10px 25px;
+    border-radius: 10px;
+    margin-left: 10px;
+    overflow: auto;
+    
 }
 
-.nav {
-  display: flex;
-  border: 2px solid #333333;
-  border-radius: 5px;
+.main .main-title{
+    padding: 20px;
+    color: #3f8;
+    text-align: center;
 }
 
-.nav-btn {
-  width: 28px;
-  height: 30px;
-  border: none;
-  font-size: 100%;
-  line-height: 100%;
-  background-color: transparent;
-  cursor: pointer;
+.main .day{
+    width: 100%;
+    /* overflow: hidden; */
 }
 
-.go-today {
-  width: 80%;
-  border-left: 1px solid #333333;
-  border-right: 1px solid #333333;
+.main .day li{
+    float: left;
+    background: white;
+    padding: 10px;
+    width: 80px;
+    height: 80px;
+    margin-right: 14px;
+    margin-top: 10px;
 }
 
-.days {
-  display: flex;
-  margin: 20px 0 10px;
+.main .day li:last-child{
+    margin-right: 0;
 }
 
-.day {
-  width: calc(100% / 7);
-  text-align: center;
+.main .day li:hover{
+    cursor: pointer;
+    transition: all .2s;
+    transform: scale(1.08);
 }
 
-.dates {
-  display: flex;
-  flex-flow: row wrap;
-  height: 50%;
-  border-top: 1px solid #333333;
-  border-right: 1px solid #333333;
+.month{
+    color: #fff;
+    font-size: 22px;
+    text-align:center;
+    margin-left: -25px;
+    margin-bottom: 20px;
+    padding: 10px;
 }
 
-.date {
-  width: calc(100% / 7);
-  padding: 15px;
-  text-align: right;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #333333;
+.month .fas{
+    cursor: pointer;
+    transition: all .2s ease-in-out;
 }
 
-.day:nth-child(7n + 1),
-.date:nth-child(7n + 1) {
-  color: #D13E3E;
+.month .fas:hover{
+    transition: all .2s ease-in-out;
+    transform: scale(1.2);
 }
 
-.day:nth-child(7n),
-.date:nth-child(7n) {
-  color: #396EE2;
+.month .fa-chevron-left{
+    float: left;
+    margin-left: 15px;
 }
 
-.other {
-  opacity: 0.3;
+.month .fa-chevron-right{
+    float: right;
+    margin-right: 15px;
 }
 
-.today {
-  position: relative;
-  color: #ffffff;
+.dayCount .dayCount-list li{
+    float: left;
+    width: 94px;
+    color: #fff;
 }
 
-.today::before {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: -1;
-  display: block;
-  width: 30px;
-  height: 30px;
-  background-color: #FF0000;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  content: '';
+.sun,.sat{
+    color: red;
+}
+
+.none{
+    display: none;
+}
+
+.todo{
+    width: 530px;
+    margin: 10px auto 0px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+  margin-right: 10px;
+ overflow: auto;
+}
+
+.textToDo{
+    margin-top: 20px;
+}
+
+.textToDo .textToDo-text[type="text"]{
+    border: none;
+    border: 3px solid rgb(222, 140, 229);
+    border-radius: 10px;;
+    padding: 5px 20px;
+    width: 480px;
+}
+
+.textToDo .textToDo-text[type="text"]:focus{
+    outline: none;
+    box-shadow: 0px 5px 10px 5px rgba(0,0,0,0.1);
+}
+
+.textToDo .textToDo-button{
+    margin-left: 10px;
+    border: none;
+    border: 3px solid rgb(222, 140, 229);
+    padding: 6px 10px;
+    background: white;
+    border-radius: 20px;
+    transition: all .2s;
+}
+
+.textToDo .textToDo-button:focus{
+    outline: none;
+}
+
+.textToDo .textToDo-button:hover{
+    cursor: pointer;
+    transition: all .2s;
+    transform: scale(1.1);
+}
+
+.todoList{
+    padding: 10px;
+}
+
+.todoList li{
+    padding: 8px;
+    border-bottom: 1px solid gray;
+}
+
+.deleteBtn{
+    border: none;
+    float: right;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.deleteBtn:focus{
+    outline:none;
+}
+
+.deleteBtn:hover{
+    transition: all .2s;
+    transform: scale(1.2);
+}
+
+
+.percentage{
+ overflow: auto;
+ background: white;
+ margin-right: 5px;
+ border-radius: 10px;
+ width: 530px;
+ margin: 0px auto 0px;
+ border: 2.9px solid #000;
+}
+
+.gogogo{
+ width: 50%;
+ border: 2px solid black;
+ cursor: pointer;
+ font-size:2em;
+}
 }
