@@ -2,43 +2,53 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="style.css">
-  <title>MHDP Full Calendar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c92986acdf.js" crossorigin="anonymous"></script>
+    <script src="index.js" defer></script>
 </head>
 <body>
 <div id="name">
 <table height=100px width=100% style="border-collapse: collapse;text-align:center">
   <tr ><th ><font size="100%" color="orange">D n C</font></th></tr></table></div>
 
-  <div class="calendar">
-    <div class="header">
-      <div class="year-month"></div>
-      <div class="nav">
-        <button class="nav-btn go-prev" onclick="prevMonth()">&lt;</button>
-        <button class="nav-btn go-today" onclick="goToday()">Today</button>
-        <button class="nav-btn go-next" onclick="nextMonth()">&gt;</button>
-      </div>
-    </div>
-    <div class="main">
-      <div class="days">
-        <div class="day">일</div>
-        <div class="day">월</div>
-        <div class="day">화</div>
-        <div class="day">수</div>
-        <div class="day">목</div>
-        <div class="day">금</div>
-        <div class="day">토</div>
-      </div>
-      <div class="dates"></div>
-    </div>
-  </div>
-  
-  <br/>
-  
-  <table height=200px width=200px style="border-collapse: collapse;text-align:center; float: right;">
+  <section class="main">
+        <h1 class="main-title">Calendar AND TodoList</h1>
+        <div class="month clearfix">
+            <span class="left">
+                <i class="fas fa-chevron-left left"></i>
+            </span>
+            <span class="right">
+                <i class="fas fa-chevron-right right"></i>
+            </span>
+            <p class="month-name"></p>
+        </div>
+        <div class="dayCount">
+            <ul class="dayCount-list clearfix">
+                <li>MON</li>
+                <li>TUE</li>
+                <li>WED</li>
+                <li>THU</li>
+                <li>FRI</li>
+                <li>SAT</li>
+                <li>SUN</li>
+            </ul>
+        </div>
+        <ul class="day clearfix"></ul>
+    </section>
+    
+     
+  <br/><br/>
+    
+       
+      
+    <section class="percentage">
+  <table height=200px width= 100% style="border-collapse: collapse;text-align:center;">
 <tr>
-  <td style="border: 2px solid #000;">people num1</td>
-  <th style="border: 2px solid #000;">n% 완료</th>
+<td rowspan="5" class="gogogo" onClick="location.href='index.html'">Let's challenge</td>
+  <td width= 30% style="border: 2px solid #000;">people num1</td>
+  <th width= 20% style="border: 2px solid #000;">n% 완료</th>
     </tr>
 <tr>
   <td style="border: 2px solid #000;">people num2</td>
@@ -56,6 +66,23 @@
   <td style="border: 2px solid #000;">people num5</td>
   <th style="border: 2px solid #000;">n% 완료</th>
     </tr></table>
+    </section>
+    
+    
+    <section class="todo">
+        <h1 class="todo-title">
+            Today's To Do List</h1>
+        <div class="textToDo">
+            <input type="text" class="textToDo-text">
+            <button class="textToDo-button add">Add</button>
+            <button class="textToDo-button reset">Day Reset</button>
+            <button class="textToDo-button allreset">All To-Do reset</button>
+        </div>
+        <ul class="todoList"></ul>
+    </section>
+  
+  
+    
   <script src="index.js"></script>
   
   <p>
@@ -70,7 +97,7 @@
     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     */
-    (function() { // DON'T EDIT BELOW THIS LINE
+    (function() { 
     var d = document, s = d.createElement('script');
     s.src = 'https://new1-4.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
