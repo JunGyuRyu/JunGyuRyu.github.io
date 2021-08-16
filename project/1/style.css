@@ -3,10 +3,6 @@
 	  text-align: center;
 	  border: 3px solid #000;
 	}
-	
-html,{
-position: static;
-}
 
 *{
     margin:0;
@@ -118,7 +114,7 @@ body{
 }
 
 .todo{
-    width: 670px;
+    width: 530px;
     margin: 10px auto 0px;
     background: white;
     padding: 20px;
@@ -136,7 +132,7 @@ body{
     border: 3px solid rgb(222, 140, 229);
     border-radius: 10px;;
     padding: 5px 20px;
-    width: 300px;
+    width: 480px;
 }
 
 .textToDo .textToDo-text[type="text"]:focus{
@@ -195,7 +191,7 @@ body{
  background: white;
  margin-right: 5px;
  border-radius: 10px;
- width: 670px;
+ width: 530px;
  margin: 0px auto 0px;
  border: 2.9px solid #000;
 }
@@ -204,6 +200,6 @@ body{
  width: 50%;
  border: 2px solid black;
  cursor: pointer;
- font-size:2.5em;
+ font-size:2em;
 }
 }
