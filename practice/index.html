@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <link rel="stylesheet" href="signin-style.css">
-<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="jquery-3.4.1.min.js"></script>
 </head>
 <body>
   <section class="signin-form">
@@ -15,8 +15,7 @@
             <label for="id">USER NAME</label>
          </div>
          <div class="int-area">
-            <input type="password" name="pw" id="pw"
-            autocomplete="off" required>
+            <input type="password" name="pw" id="pw" autocomplete="off" required>
             <label for="pw">PASSWORD</label>
          </div>
          <div class ="btn-area">
@@ -54,7 +53,7 @@
         d[0] = b;
         localStorage.setItem('id', JSON.stringify(c));
         localStorage.setItem('pw', JSON.stringify(d));
-        location.href = "login.html/";
+        location.href = "login.html";
         alert(c[0]+' Sign up complete.');
         }
       });
