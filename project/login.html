@@ -40,7 +40,6 @@
       var arr2 = JSON.parse(getpw);
 
       $(btn).on('click', function(event){
-      event.preventDefault();
         if($(id).val() == ""){
           $(id).next('label').addClass('warning');
           setTimeout(function(){
@@ -52,6 +51,7 @@
         }
         else if(($(id).val() == arr1) && ($(pw).val() == arr2)){
         alert(arr1+' login complete.');
+          event.preventDefault();
         location.href = "homepage/index.html";
         }
         else if(($(id).val() !== arr1) && ($(pw).val() !== arr2)){
