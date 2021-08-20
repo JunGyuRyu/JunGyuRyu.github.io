@@ -35,7 +35,6 @@
       let pw = $('#pw');
       let btn = $('#btn');
       $(btn).on('click', function(event){
-      event.preventDefault();
         if($(id).val() == ""){
           $(id).next('label').addClass('warning');
           setTimeout(function(){
@@ -53,6 +52,7 @@
         localStorage.setItem('id', JSON.stringify(c));
         localStorage.setItem('pw', JSON.stringify(d));
         alert(c[0]+' Sign up complete.');
+        event.preventDefault();
         location.href="login.html";
              
         }
