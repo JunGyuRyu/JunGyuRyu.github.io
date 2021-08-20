@@ -3,37 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <link rel="stylesheet" href="signin-style.css">
+  <link rel="stylesheet" href="login-style.css">
 <script src="jquery-3.4.1.min.js"></script>
 </head>
 <body>
-  <section class="signin-form">
-   <h1 style="font-size: 50px;")>Sign In Please</h1>
-      <form action="">
+  <section class="login-form">
+   <h1 style="font-size: 50px;")>Welcome!</h1>
+      <form>
          <div class="int-area">
             <input type="text" name="id" id="id" autocomplete="off" required>
             <label for="id">USER NAME</label>
          </div>
          <div class="int-area">
-            <input type="password" name="pw" id="pw" autocomplete="off" required>
+            <input type="password" name="pw" id="pw"
+            autocomplete="off" required>
             <label for="pw">PASSWORD</label>
          </div>
          <div class ="btn-area">
-            <button id="btn" type="submit">SIGNIN</button>
+            <button id="btn" type="submit">LOGIN</button>
          </div>
       </form> 
        <div class ="caption">
+            <a href="index.html">Forgot Password?</a><br>
             <a href="homepage/index.html">Guest</a><br>
             <a href="javascript:history.back()"class="btn btn-primary">Back</a>
          </div>
   </section>
   
   <script>
-  var c=[0]
-  var d=[0]
       let id = $('#id');
       let pw = $('#pw');
       let btn = $('#btn');
+      var getid = localStorage.getItem("id");
+      var getpw = localStorage.getItem("pw");
+      var arr1 = JSON.parse(getid);
+      var arr2 = JSON.parse(getpw);
+
       $(btn).on('click', function(event){
       event.preventDefault();
         if($(id).val() == ""){
@@ -45,16 +50,12 @@
         else  if($(pw).val() == ""){
           $(pw).next('label').addClass('warning');
         }
-        else if(($(id).val() !== "") && ($(pw).val() !== "")){
-        a = $(id).val();
-        b = $(pw).val();
-        c[0] = a;
-        d[0] = b;
-        localStorage.setItem('id', JSON.stringify(c));
-        localStorage.setItem('pw', JSON.stringify(d));
-        alert(c[0]+' Sign up complete.');
-        location.href="login.html";
-             
+        else if(($(id).val() == arr1) && ($(pw).val() == arr2)){
+        alert(arr1+' login complete.');
+        location.href = "homepage/index.html";
+        }
+        else if(($(id).val() !== arr1) && ($(pw).val() !== arr2)){
+        alert('Wrong Id or Pw.');
         }
       });
   </script> 
