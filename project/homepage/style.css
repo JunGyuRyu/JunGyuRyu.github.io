@@ -2,8 +2,10 @@
     max-width: 100% !important;
 }
 .comment{
-  position: absolute;
-  top: 90%;
+  position: static;
+  top: 500px;
+    max-width: 100% !important;
+}
 }
 
 #name{
