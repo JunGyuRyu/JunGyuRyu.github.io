@@ -273,7 +273,7 @@ input.addEventListener('keypress',(event)=>{
 });
 
 reset.addEventListener('click',()=>{
-    const result = prompt('reset TODO on ${year} ${mon} ${DayOfChoice}? Enter (y/n)');
+    const result = prompt(`reset TODO on ${year} ${mon} ${DayOfChoice}? Enter (y/n)`);
     const YMD = year+'-'+mon+'-'+DayOfChoice;
     if(result==='y'){
         localStorage.removeItem(YMD);
@@ -282,7 +282,7 @@ reset.addEventListener('click',()=>{
 });
 
 allReset.addEventListener('click',()=>{
-    const result = prompt('clear all TODO in calendar? Enter (y/n)');
+    const result = prompt(`clear all TODO in calendar? Enter (y/n)`);
     if(result==='y'){
         localStorage.clear();
         displayToDoOnDays();
