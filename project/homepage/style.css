@@ -1,9 +1,10 @@
 .utterances {
-    max-width: 80% !important;
+    max-width: 100% !important;
 }
 .comment{
-  position: relative;
-  top: 5000px;
+  position: absolute;
+  top: 100%;
+  bottom: 0;
 }
 
 #name{
