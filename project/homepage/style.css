@@ -1,5 +1,9 @@
 .utterances {
-    max-width: 100% !important;
+    max-width: 90% !important;
+}
+.comment {
+  position: static;
+  top: 500px;
 }
 
 #name{
