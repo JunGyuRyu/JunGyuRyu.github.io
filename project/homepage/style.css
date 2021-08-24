@@ -1,8 +1,7 @@
 .utterances {
-        position: absolute;
-  top: 100%;
-  bottom: 0;
-    max-width: 90% !important;
+         position: static;
+  top: 500px;
+    max-width: 100% !important;
 }
 
 #name{
