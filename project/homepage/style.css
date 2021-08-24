@@ -1,7 +1,6 @@
 .utterances {
-     position: static;
-    bottom: 0;
-	top: 80%;
+     position: absolute;
+	top: 90%;
     max-width: 100% !important;
 }
 
