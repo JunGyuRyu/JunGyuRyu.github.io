@@ -1,5 +1,11 @@
 .utterances {
-     position: fixed;
+     position: static;
+    bottom: 0;
+    width: 100%;
+}
+
+.comment{
+     position: static;
     bottom: 0;
     width: 80%;
 }
