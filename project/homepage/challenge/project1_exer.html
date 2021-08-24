@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+<meta charset='utf-8'>
+<title>운동하기 챌린지</title>
+
+<link rel="stylesheet" href="pro_style.css">
+</head>
+
+<body>
+<br/>
+<h1 class=center></h1><br/>
+<h2 class=center></h2>
+<h3 class=center></h3>
+<br/><br/>
+
+<legend><운동 목록 업로드></legend><br/>
+<div id='tb'><textarea id='inputbox' rows='10' cols='40'></textarea></div>
+<div id='preview'>SUBMIT</div>
+<br/><br/>
+<div id='result'></div>
+<br/><br/>
+
+
+<div class='container'>
+<div class='image-upload' id='image-upload'>
+<br/>
+
+
+<form method='post' enctype='multipart/form-data' align-items='center'>
+
+<legend>< 오늘의 사진 업로드 ></legend>
+<br/>
+<div class='button'>
+<label for="files">여기를 클릭해 사진을 업로드하세요!</label>
+</div>
+<input type='file' id='files' name='chooseFile' accept='image/*' onchange='loadFile(this)'>
+</form>
+
+
+<div class='fileContainer'>
+<div class='fileInput'>
+<p>FILE NAME : </p>
+<p id='fileName'></p>
+</div>
+<div class='buttonContainer'>
+<div class='submitButton' id='submitButton'>SUBMIT</div>
+</div></div></div>
+<br/><br/><br/><br/>
+
+
+<div id="list">
+</div>
+<a href="#" id="deleteImgs">사진 삭제</a>
+</div> 
+
+
+<span class='btn' id='pre'>
+<img src='image/prev.png' alt='prev' width='70px'
+style='float: left;'>
+<a href='#'><input type='button'></a>
+</span>
+
+<span class='btn' id='next'>
+<img src='image/next.png' alt='next' width='70px'
+style='float: right;'>
+<a href='#'><input type='button'></a>
+</span>
+
+<script src='pro_script1_exer.js'></script>
+</body>
+</html>
