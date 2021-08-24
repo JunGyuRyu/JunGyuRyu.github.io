@@ -1,10 +1,9 @@
 .utterances {
     max-width: 100% !important;
-	position: static;
 }
 .comment {
-  
-	position: static;
+	margin-top: 4000px;
+    overflow: auto;
 }
 
 #name{
