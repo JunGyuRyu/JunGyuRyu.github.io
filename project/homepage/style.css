@@ -1,8 +1,8 @@
 .utterances {
-    max-width: 90% !important;
+    max-width: 100% !important;
 }
 .comment {
-   margin-top: 320px;
+   margin-top: 10px;
    overflow: auto;
 }
 
