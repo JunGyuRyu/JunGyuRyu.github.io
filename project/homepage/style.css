@@ -1,12 +1,13 @@
 .utterances {
     max-width: 100% !important;
 }
-.comment{
+
+.comment {
   position: static;
   top: 500px;
     max-width: 100% !important;
 }
-}
+
 
 #name{
 	  background: #3f8;
