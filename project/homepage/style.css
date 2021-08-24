@@ -1,5 +1,5 @@
 .utterances {
-     position: absolute;
+     position: static;
 	top: 100%;
     max-width: 100% !important;
 }
