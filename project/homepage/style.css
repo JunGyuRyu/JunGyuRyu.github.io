@@ -1,6 +1,9 @@
 .utterances {
     max-width: 100% !important;
-	min-height: 100%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
 }
 #name{
 	  background: #3f8;
