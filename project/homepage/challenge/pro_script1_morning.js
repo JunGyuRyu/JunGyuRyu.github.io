@@ -115,7 +115,7 @@ function handleFileSelect(evt) {
     reader.readAsDataURL(f);
   }
   per.innerHTML =("완료 ");
-  checkcp1=1;
+  checkcp1+=1;
  localStorage.setItem("cp1", JSON.stringify(checkcp1));
 } 
 
@@ -125,12 +125,12 @@ console.log(a)
 document.getElementById('list').innerHTML = "";
 console.log(images)
 per.innerHTML =("미완료");
-  checkcp1=0;
+  checkcp1-=1;
  localStorage.setItem("cp1", JSON.stringify(checkcp1));
 if(images && images.length > 0){
 
   per.innerHTML =("완료");
-    checkcp1=1;
+    checkcp1+=1;
  localStorage.setItem("cp1", JSON.stringify(checkcp1));
   images.forEach(displayImgData);
 }
@@ -155,7 +155,7 @@ function deleteImages(){
 imagesObject[a] = [];
 localStorage.removeItem(`images${a}`);
 per.innerHTML =("미완료");
-  checkcp1=0;
+  checkcp1-=1;
  localStorage.setItem("cp1", JSON.stringify(checkcp1));
 document.getElementById('list').innerHTML = "";
 }
