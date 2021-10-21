@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko"><head><link rel="stylesheet" href="index.css">
+<html lang="ko"><head><link rel="stylesheet" href="연습.css">
 <script>
 var audioM = new Audio('Mugunghwa.mp4');
 audioM.playbackRate=2;
@@ -23,7 +23,9 @@ musicStart.onclick = function(){
   audioM.play();
    var timerGo = setInterval(function(){
    timer.innerHTML=j;
-   document.body.appendChild(timer);
+   timer.style.position="absolute";
+   timer.style.left=10+'px';
+   timer.style.top=130+'px';
    j++;
    if(j==700){
    youngF.style.display = 'block';
@@ -151,6 +153,7 @@ youngF.style.position = 'absolute';
 youngF.style.display = 'none';
 
 
+var Explan = document.getElementById('Explan');
 
 }
 </script>
@@ -173,4 +176,17 @@ youngF.style.display = 'none';
 <button id='musicStart'>Game Start</button>
 <button id='musicStop'>Game Pause</button>
 <h1 id="timer">000</h1>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+
+<div id="box">
+<div id="ExplanTable"><table height=100px width=100% style="border-collapse: collapse;text-align:center">
+  <tr><th><font size="100%" color="orange">Game Explanation</font></th></tr></table></div>
+<div id="Explan"><table height=100px width=100% style="border-collapse: collapse">
+<tr><th>
+Go -> move person<br/>
+Stop -> stop person<br/>
+Game Start -> start music & timer<br/>
+Game Pause -> pause music & timer<br/>
+※ If you move when she looks forward, you die. ※
+</th></tr></table></div></div>
 </body></html>
