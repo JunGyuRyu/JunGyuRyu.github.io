@@ -119,6 +119,10 @@ var btngo   = document.getElementById('btngo');
 var btnstop = document.getElementById('btnstop');
 
 btngo.onclick = function(){
+  if(CheckClick[0]==0){
+alert('Game Start first!');
+window.location.reload();
+}
 CheckClick[1]+=1;
 if(CheckClick[1]==2){
 alert('Dont Click This Twice');
