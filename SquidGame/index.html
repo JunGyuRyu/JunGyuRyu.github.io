@@ -101,6 +101,7 @@ musicStart.onclick = function(){
   }
      musicStop.onclick = function(){
      CheckClick[0]=0;
+     CheckClick[1]+=1;
      audioM.pause();
      clearInterval(timerGo);
      }
