@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko"><head><link rel="stylesheet" href="index.css">
+<html><head><link rel="stylesheet" href="index.css">
 <head><meta name="viewport" content="width=device-width, initial-scale=1.0"/></head>
 <script>
 window.onload = function(){
-//¿ø ±×¸®±â
+//ì› ê·¸ë¦¬ê¸°
 var canvas0 = document.getElementById('circle');
 var ctx0 = canvas0.getContext('2d');
 ctx0.beginPath();
@@ -12,7 +12,7 @@ ctx0.stroke();
 ctx0.fillStyle = '#f8d9b6';
 ctx0.fill();
 
-//»ï°¢Çü ±×¸®±â
+//ì‚¼ê°í˜• ê·¸ë¦¬ê¸°
 var canvas1 = document.getElementById('triangle');
 var ctx1 = canvas1.getContext('2d');
 ctx1.beginPath();
@@ -25,7 +25,7 @@ ctx1.fill();
 ctx1.globalCompositeOperation = "source-over";
 
 
-//¹öÆ° Å¬¸¯½Ã ÀÛµ¿ÇÒ ÇÔ¼ö
+//ë²„íŠ¼ í´ë¦­ì‹œ ì‘ë™í•  í•¨ìˆ˜
 var checkbtnon=false;
 var clickBtn =  document.querySelectorAll(".btn");
 for(var j=0; j<clickBtn.length; j++){
@@ -37,7 +37,7 @@ checkbtnon=true;
 
 
 
-//°°Àº ¹öÆ° 2¹ø Å¬¸¯ Ã¼Å©
+//ê°™ì€ ë²„íŠ¼ 2ë²ˆ í´ë¦­ ì²´í¬
 var doubleClick = [false];
     function doubleClickCheck(i){
         if(doubleClick[i] == true){
@@ -122,9 +122,9 @@ clickBtn[66].onclick =function(){insert(66);};
 
 
 
-      /*¹öÆ° ¸»°í ´Ù¸¥ °÷ ´©¸£¸é CrackRate Áõ°¡
-      CrackRate 100% µÇ¸é Å»¶ô
-      67°³ ¹öÆ° ÀüºÎ ½Ã°£¾È¿¡ Å¬¸¯ ½Ã Å¬¸®¾î
+      /*ë²„íŠ¼ ë§ê³  ë‹¤ë¥¸ ê³³ ëˆ„ë¥´ë©´ CrackRate ì¦ê°€
+      CrackRate 100% ë˜ë©´ íƒˆë½
+      67ê°œ ë²„íŠ¼ ì „ë¶€ ì‹œê°„ì•ˆì— í´ë¦­ ì‹œ í´ë¦¬ì–´
       */
 var CheckClear=0;
 var CrackRate=0;
@@ -145,7 +145,7 @@ window.location.reload();
 });
 
 
-//CrackRate, Time, Å¬¸¯ÇÑ ¹öÆ° ¼ö Å×ÀÌºí¿¡ Ç¥½Ã
+//CrackRate, Time, í´ë¦­í•œ ë²„íŠ¼ ìˆ˜ í…Œì´ë¸”ì— í‘œì‹œ
 var CrackRate1=document.getElementById('CrackRate');
 setInterval(function(){
 CrackRate1.innerHTML="Crack Rate: "+CrackRate+"%";},100);
@@ -164,7 +164,7 @@ window.location.reload();
 
 var Clicked=document.getElementById('Clicked');
 setInterval(function(){
-Clicked.innerHTML="Clicked: "+CheckClear+"°³";},100);
+Clicked.innerHTML="Clicked: "+CheckClear+"ê°œ";},100);
 
 
 }
@@ -172,15 +172,15 @@ Clicked.innerHTML="Clicked: "+CheckClear+"°³";},100);
 </head>
 <body>
 <div><table height=700px width=20% style="border-collapse: collapse;text-align:center">
-  <tr height="20%" id="title" ><th><font size="100%" color="orange">´Ş°í³ª »Ì±â</font></th></tr>
+  <tr height="20%" id="title" ><th><font size="100%" color="orange">ë‹¬ê³ ë‚˜ ë½‘ê¸°</font></th></tr>
   <tr height="15%" id="GameEx" ><th>Game<br/>Description</th></tr>
   <tr height="60%" id="Ex" ><th>
-  1. ¹öÆ° ÀÌ¿ÜÀÇ ´Ù¸¥ ºÎºĞÀ» Å¬¸¯ÇÏ¸é Crack Rate 20% Áõ°¡
-  <br/><br/>2. TimeÀÌ 0 µÇ¸é ½ÇÆĞ
-  <br/><br/>3. CrackRate 100% µÇ¸é ½ÇÆĞ
-  <br/><br/>4. ½Ã°£ ¸ØÃß±â ¾øÀ½ (Ä¡ÆÃ ¹æÁö)
-  <br/><br/>5. ½Ã°£¾È¿¡ ¸ğµç ¹öÆ° Å¬¸¯½Ã ¼º°ø
-  <br/><br/>¡Ø ³Ê¹« »¡¸® ´©¸£¸é ¹öÆ° ¾È´­·Á¼­ CrackRate Áõ°¡ ÇÒ ¼öµµ ÀÖÀ½
+  1. ë²„íŠ¼ ì´ì™¸ì˜ ë‹¤ë¥¸ ë¶€ë¶„ì„ í´ë¦­í•˜ë©´ Crack Rate 20% ì¦ê°€
+  <br/><br/>2. Timeì´ 0 ë˜ë©´ ì‹¤íŒ¨
+  <br/><br/>3. CrackRate 100% ë˜ë©´ ì‹¤íŒ¨
+  <br/><br/>4. ì‹œê°„ ë©ˆì¶”ê¸° ì—†ìŒ (ì¹˜íŒ… ë°©ì§€)
+  <br/><br/>5. ì‹œê°„ì•ˆì— ëª¨ë“  ë²„íŠ¼ í´ë¦­ì‹œ ì„±ê³µ
+  <br/><br/>â€» ë„ˆë¬´ ë¹¨ë¦¬ ëˆ„ë¥´ë©´ ë²„íŠ¼ ì•ˆëˆŒë ¤ì„œ CrackRate ì¦ê°€ í•  ìˆ˜ë„ ìˆìŒ
   </th></tr>
   </table></div>
 
@@ -193,7 +193,7 @@ Clicked.innerHTML="Clicked: "+CheckClear+"°³";},100);
 </table><div>
 
 <div><table height=100px width=200px style="border-collapse: collapse;text-align:center">
-<tr><th height=50px width=270px id="Clicked">Clicked: n°³</th></tr>
+<tr><th height=50px width=270px id="Clicked">Clicked: nê°œ</th></tr>
 </table><div>
 
 <div>
