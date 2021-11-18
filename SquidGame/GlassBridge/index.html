@@ -9,7 +9,7 @@ var Life=document.getElementById('Life');
 setInterval(function(){
 Life.innerHTML="Life: "+LifeLeft+"개 (0이 되면 실패)";},100);
 
-//유리 클릭시 작동할 함수
+//유리를 배열로 가져오고 클릭시 하늘색으로 변경
 var ClickGlass =  document.querySelectorAll(".glasses");
 for(var i=0; i<ClickGlass.length; i++){
 ClickGlass[i].addEventListener("click",function(){
