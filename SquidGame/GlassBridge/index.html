@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko"><head><link rel="stylesheet" href="index.css">
-<meta content="width=device-width, initial-scale=1.0"/>
+<meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0"/>
 <script>
 window.onload = function(){
-//¸ñ¼û Ç¥½Ã
+//ëª©ìˆ¨ í‘œì‹œ
 var LifeLeft = 8;
 var Life=document.getElementById('Life');
 setInterval(function(){
-Life.innerHTML="Life: "+LifeLeft+"°³ (0ÀÌ µÇ¸é ½ÇÆÐ)";},100);
+Life.innerHTML="Life: "+LifeLeft+"ê°œ (0ì´ ë˜ë©´ ì‹¤íŒ¨)";},100);
 
-//À¯¸® Å¬¸¯½Ã ÀÛµ¿ÇÒ ÇÔ¼ö
+//ìœ ë¦¬ í´ë¦­ì‹œ ìž‘ë™í•  í•¨ìˆ˜
 var ClickGlass =  document.querySelectorAll(".glasses");
 for(var i=0; i<ClickGlass.length; i++){
 ClickGlass[i].addEventListener("click",function(){
@@ -17,7 +17,7 @@ this.style.color = 'white';
 this.style.background='skyblue';
 });}
 
-//0 È¤Àº 1  »ý¼ºÇØ¼­ 16°³ ¹è¿­¿¡ ³Ö±â
+//0 í˜¹ì€ 1  ìƒì„±í•´ì„œ 16ê°œ ë°°ì—´ì— ë„£ê¸°
 var RandomNum = [];
 var CheckStrong=[];
 CheckStrong.length=16;
@@ -35,7 +35,7 @@ CheckStrong[j+8]=0;
 var StepCount = 0;
 var StepCheck = [0,1,2,3,4,5,6,7,0,1,2,3,4,5,6,7];
 function Step(i){
-  //ÀÌÀü À¯¸® ¼±ÅÃÇß´ÂÁö È®ÀÎ (°Ç³Ê¶Ù±â ¹æÁö)
+  //ì´ì „ ìœ ë¦¬ ì„ íƒí–ˆëŠ”ì§€ í™•ì¸ (ê±´ë„ˆë›°ê¸° ë°©ì§€)
   if(StepCount < StepCheck[i]){
   alert("Don't Cheat!");
   window.location.reload();
@@ -46,7 +46,7 @@ function Step(i){
  
   }
   
-  // 1ÀÌ¸é °­È­À¯¸® 0ÀÌ¸é ÀÏ¹ÝÀ¯¸®
+  // 1ì´ë©´ ê°•í™”ìœ ë¦¬ 0ì´ë©´ ì¼ë°˜ìœ ë¦¬
   switch (CheckStrong[i]){
     case 1 :
      if(StepCount == 8){
@@ -57,7 +57,7 @@ function Step(i){
       LifeLeft -= 1;
       alert("You Fell!");
       ClickGlass[i].style.background = 'orange';
-      //¸ñ¼û 0°³ µÇ¸é Ã³À½ºÎÅÍ ´Ù½Ã
+      //ëª©ìˆ¨ 0ê°œ ë˜ë©´ ì²˜ìŒë¶€í„° ë‹¤ì‹œ
       if(LifeLeft==0){
       alert("You Died!");
       window.location.reload();
@@ -88,10 +88,10 @@ ClickGlass[15].onclick =function(){Step(15);}
 
 <body>
 <div><table height=100px width=100% style="border-collapse: collapse;text-align:center">
-  <tr id="title" ><th><font size="100%" color="orange">´Ù¸® °Ç³Ê±â</font></th></tr></table></div>
+  <tr id="title" ><th><font size="100%" color="orange">ë‹¤ë¦¬ ê±´ë„ˆê¸°</font></th></tr></table></div>
 
 <div><table height=70px width=500px style="border-collapse: collapse;text-align:center">
-<tr><th id="Life">Life: n°³</th></tr></table></div>
+<tr><th id="Life">Life: nê°œ</th></tr></table></div>
 
 <div id="GlassTable"><table height=300px width=1500px style="border-collapse: collapse;text-align:center">
 <tr>
@@ -121,9 +121,9 @@ ClickGlass[15].onclick =function(){Step(15);}
   <tr><th><font size="100%" color="orange">Game Description</font></th></tr></table></div>
 <div id="Description"><table height=100px width=100% style="border-collapse: collapse">
 <tr><th>
-À§ / ¾Æ·¡ Áß ÇÏ³ªÀÇ À¯¸® ¼±ÅÃÇØ¼­ Å¬¸¯<br/>
-¿ÞÂÊºÎÅÍ Â÷·Ê´ë·Î Å¬¸¯ (°Ç³Ê¶Ù¸é Ã³À½ºÎÅÍ ´Ù½Ã½ÃÀÛ)<br/>
-ÀÌ¹Ì Áö³ª¿Ô¾îµµ ÀÌÀü ²¨ Å¬¸¯ÇØ¼­ ¶³¾îÁö¸é Life Â÷°¨, ÀÌ¹Ì ¶³¾îÁ³´ø ºÎºÐ ´Ù½Ã Å¬¸¯ÇØµµ Life Â÷°¨
+ìœ„ / ì•„ëž˜ ì¤‘ í•˜ë‚˜ì˜ ìœ ë¦¬ ì„ íƒí•´ì„œ í´ë¦­<br/>
+ì™¼ìª½ë¶€í„° ì°¨ë¡€ëŒ€ë¡œ í´ë¦­ (ê±´ë„ˆë›°ë©´ ì²˜ìŒë¶€í„° ë‹¤ì‹œì‹œìž‘)<br/>
+ì´ë¯¸ ì§€ë‚˜ì™”ì–´ë„ ì´ì „ êº¼ í´ë¦­í•´ì„œ ë–¨ì–´ì§€ë©´ Life ì°¨ê°, ì´ë¯¸ ë–¨ì–´ì¡Œë˜ ë¶€ë¶„ ë‹¤ì‹œ í´ë¦­í•´ë„ Life ì°¨ê°
 </th></tr></table></div>
 </body>
 </html>
