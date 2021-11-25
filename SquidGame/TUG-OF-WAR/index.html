@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko"><head><link rel="stylesheet" href="index.css">
+<meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0"/>
+<script>
+window.onload = function(){
+var person1 = document.getElementById('person1');
+ person1.style.fontSize = '40px';
+ person1.style.position = 'absolute';
+ person1.style.left=20+'px';
+ person1.style.top=250+'px';
+ 
+ var person2 = document.getElementById('person2');
+ person2.style.fontSize = '40px';
+ person2.style.position = 'absolute';
+ person2.style.right=20+'px';
+ person2.style.top=250+'px';
+ 
+ var rope = document.getElementById('rope');
+ rope.style.fontSize = '40px';
+ rope.style.position = 'absolute';
+ rope.style.left=100+'px';
+ rope.style.top=300+'px';
+ 
+ var center1 = document.getElementById('center1');
+ center1.style.fontSize = '40px';
+ center1.style.position = 'absolute';
+ center1.style.left=760+'px';
+ center1.style.top=300+'px';
+ 
+ var iii=760;
+ var btnPull = document.getElementById('btnPull');
+ var ProgressBar =  document.querySelectorAll("#PB");
+ var j=0;
+ 
+ var PushPull = setInterval(function(){
+center1.style.left = (iii)+'px';
+iii+=10;
+j-=1;
+if(iii >= 1440){
+alert("You Died");
+window.location.reload();
+}
+     btnPull.onclick = function(){
+iii-=10;
+center1.style.left = (iii)+'px';
+j+=1;
+ProgressBar[j-1].style.background = 'green';
+console.log(j);
+if(iii<=100){
+alert("You Survived!");
+window.location.reload();
+}}
+},1000);
+}
+</script>
+</head>
+<body>
+<div><table height=100px width=100% style="border-collapse: collapse;text-align:center">
+  <tr id="title" ><th><font size="100%" color="orange">줄다리기</font></th></tr></table></div>
+
+<div><table id="bar" height=70px width=500px style="border-collapse: collapse;text-align:center">
+  <tr>
+  <th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th>
+  <th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th>
+  <th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th>
+  <th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th>
+  <th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th>
+  <th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th>
+  <th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th>
+  <th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th>
+  <th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th>
+  <th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th>
+  <th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th><th id="PB"></th>
+  </tr>
+  </table></div>
+
+<div id='person1'>
+&nbsp o<br/>
+/ l＼<br/>
+/  ＼<br/>
+</div>
+
+<div id='person2'>
+&nbsp o<br/>
+/ l＼<br/>
+/  ＼<br/>
+</div>
+
+<div id='rope'>
+--------------------------------------------------------------------------------
+</div>//81개
+
+<div id='center1'>
+|
+</div>
+
+<button id="btnPull">줄당기기</button>
+
+<div id="DescriptionTable"><table height=65px width=100% style="border-collapse: collapse;text-align:center">
+  <tr><th><font size="100%" color="orange">Game Description</font></th></tr></table></div>
+<div id="Description"><table height=100px width=100% style="border-collapse: collapse">
+<tr><th>
+버튼 클릭해서 왼쪽으로 줄 당기기<br/>
+줄 가운데에 있는 "|" 가 왼쪽 끝에 닿으면 성공<br/>
+"|" 가 오른쪽 끝에 닿으면 실패
+</th></tr></table></div>
+</body>
+</html>
