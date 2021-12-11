@@ -1,0 +1,69 @@
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    display: flex;
+    justify-content: center;
+    
+    height: 100vh;
+    background: url("bg.png") no-repeat center;
+    background-size: cover;
+}
+
+#title{
+font-size: 70px;
+}
+
+#login{
+position:absolute;
+top: 55%;
+font-size:50px;
+background-color: black;
+color:skyblue;
+border: 1px solid skyblue;
+border-radius: 15px;
+padding: 5px;
+}
+#create{
+position:absolute;
+top: 70%;
+font-size:50px;
+background-color: black;
+color:skyblue;
+border: 1px solid skyblue;
+border-radius: 15px;
+padding: 5px;
+}
+#leaderBoard{
+position:absolute;
+top: 85%;
+font-size:50px;
+background-color: black;
+color:skyblue;
+border: 1px solid skyblue;
+border-radius: 15px;
+padding: 5px;
+}
+
+#login:hover{
+background:skyblue;
+color:black;
+}
+#create:hover{
+background:skyblue;
+color:black;
+}
+#leaderBoard:hover{
+background:skyblue;
+color:black;
+}
+#login:active{
+background:black;
+color:skyblue;
+}
+#create:active{
+background:black;
+color:skyblue;
+}
+#leaderBoard:active{
+background:black;
+color:skyblue;
+}

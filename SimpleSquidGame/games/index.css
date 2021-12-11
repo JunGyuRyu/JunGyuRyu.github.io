@@ -1,0 +1,45 @@
+#name{
+	  background: #3f8;
+	  text-align: center;
+	  border: 3px solid #000;
+	}
+#ExplainTable{
+	  background: #dfd6ab;
+	  text-align: center;
+	  border: 3px solid #000;
+	  width:99%;
+	position:absolute;
+	top : 390px;
+	}
+	
+#Explain{
+width:99%;
+	position:absolute;
+	top : 493px;
+	  text-align: left;
+	  border: 3px solid #000;
+	  font-size: 30px;
+	  color: blue;
+	}
+	
+	#btngo{
+width: 50px;
+height:30px;
+font-size:15px;
+}
+  #btnstop{
+width: 100px;
+height:30px;
+font-size:15px;
+}
+  #musicStart{
+width: 150px;
+height:30px;
+font-size:15px;
+}
+  #musicStop{
+width: 150px;
+height:30px;
+font-size:15px;
+}
+
