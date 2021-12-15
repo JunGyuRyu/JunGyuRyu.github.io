@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko"><head><link rel="stylesheet" href="Marbles.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<script>
+window.onload = function(){
+//플레이 타임 체크
+if(localStorage.getItem('playTime')){
+ var checkPlayTime = localStorage.getItem('playTime');
+ checkPlayTime = Number(checkPlayTime);
+ }
+var playTime = setInterval(function(){
+checkPlayTime+=1;
+localStorage.setItem('playTime',checkPlayTime);
+},1000);
+
+
+var btnBet = document.getElementById("btnBet");
+var myMarble = 10;
+var betMarble = 0;
+
+var marbleHave = document.getElementById('myMarble');
+setInterval(function(){
+marbleHave.innerHTML="<b>보유 구슬: "+myMarble+"개</b>";},100);
+
+var shownMarble = document.getElementById('shownMarble');
+var marbleLeft = 10;
+shownMarble.innerHTML="<b>남은 구슬: "+marbleLeft+"개</b>";
+
+var btnBet = document.getElementById('btnBet');
+
+
+btnBet.onclick = function (){
+var marbleBetted = document.getElementById('marbleBetted');
+betMarble = document.getElementById('betMarble').value;
+betMarble = Number(betMarble);
+
+if(betMarble>10 || betMarble<1){
+alert("1~9까지만 베팅 가능");
+}
+else{
+if((myMarble-betMarble) >= 0){
+marbleBetted.innerHTML="<b>베팅한 구슬: "+betMarble+"개</b>";
+}else{
+alert("보유구슬 초과 베팅 불가");
+}
+alert("이제 홀/짝을 선택하세요");
+}
+}
+
+var odd = document.getElementById('odd');
+var even = document.getElementById('even');
+
+function createRN(){
+var RN = Math.floor(Math.random() * 10) + 1;
+return RN;
+}
+
+var mTable = document.getElementById('mTable');
+mTable.innerHTML = "<b>나온 구슬: 0개</b>";
+var odd = document.getElementById('odd');
+var even = document.getElementById('even');
+
+odd.onclick = function(){
+var getRN = createRN();
+mTable.innerHTML = "<b>나온 구슬: "+ getRN+"개</b>";
+if((getRN%2)==1){
+myMarble += betMarble;
+marbleLeft = marbleLeft - betMarble;
+shownMarble.innerHTML="<b>남은 구슬: "+marbleLeft+"개</b>";
+alert('홀수입니다!');
+}
+else if((getRN%2)==0){
+marbleLeft = marbleLeft + betMarble;
+shownMarble.innerHTML="<b>남은 구슬: "+marbleLeft+"개</b>";
+myMarble -= betMarble;
+alert('짝수입니다.');
+}
+
+if(myMarble <= 0){
+alert("실패!");
+window.location.reload();
+}
+else if(myMarble >=20){
+alert("이제 마지막 게임입니다!");
+location.href="GlassBridge.html";
+}
+}
+
+even.onclick = function(){
+var getRN = createRN();
+mTable.innerHTML = "<b>나온 구슬: "+ getRN+"개</b>";
+if((getRN%2)==0){
+myMarble += betMarble;
+marbleLeft = marbleLeft - betMarble;
+shownMarble.innerHTML="<b>남은 구슬: "+marbleLeft+"개</b>";
+alert('짝수입니다!');
+}
+else if((getRN%2)==1){
+marbleLeft = marbleLeft + betMarble;
+shownMarble.innerHTML="<b>남은 구슬: "+marbleLeft+"개</b>";
+myMarble -= betMarble;
+alert('홀수입니다.');
+}
+if(myMarble <= 0){
+alert("실패!");
+window.location.reload();
+}
+else if(myMarble >=20){
+alert("이제 마지막 게임입니다!");
+location.href="GlassBridge.html";
+}
+}
+
+
+
+}
+</script>
+</head>
+<body>
+<div><table height=699px width=20% style="border-collapse: collapse;text-align:center">
+  <tr height="20%" id="title" ><th><font size="100%" color="orange">구슬치기</font></th></tr>
+  <tr height="15%" id="GameEx" ><th>Game<br/>Description</th></tr>
+  <tr height="60%" id="Ex" ><th>
+  1.10개의 구슬이 주어짐, <br/>1~10개 까지 베팅 가능
+  <br/><br/>2. 0~10개의 구슬 랜덤 생성
+  <br/><br/>3. 현재 가지고 있는 구슬 중<br/> 원하는만큼  걸기
+  <br/><br/>4. 홀/짝 맞추면 걸었던 갯수만큼 획득, 틀리면 걸었던거 잃음
+  <br/><br/>5. 구슬 20개 넘기면 통과, 0개 되면 실패
+  <br/><br/>※주의: 구슬 여러번 걸면 이전에 걸었던거 삭제되고<br/> 구슬걸기 다시 안하고 홀/짝 또 누르면 이미 걸려있는 구슬로 진행함
+  </th></tr>
+  </table></div>
+  
+  <div>
+  <table style="border-collapse: collapse;text-align:center">
+  <tr height="60px" id="myMarble"><th><font size="100%" >보유 구슬: n개</font></tr><th></table>
+  </div>
+  
+  <div>
+  <table style="border-collapse: collapse;text-align:center">
+  <tr height="60px" id="shownMarble"><th><font size="100%" >나온 구슬: n개</font></tr><th></table>
+  </div>
+  
+  <div>
+  <table style="border-collapse: collapse;text-align:center">
+  <tr id="mTable" ><th><font size="100%" >구슬: n개 (홀/짝)</font></th></tr></table>
+  </div>
+  
+  <form name="frm" onsubmit="return false">
+<label id ="betText">베팅할 구슬 갯수: </label>
+<input type="number" min="1" max="10" id="betMarble"/>
+<input type="button" id="btnBet" value="구슬 걸기"/>
+</form>	
+  
+  <div>
+  <table style="border-collapse: collapse;text-align:center">
+  <tr height="60px" id="marbleBetted"><th>베팅한 구슬: 0개</tr><th></table>
+  </div>
+  
+  <button id="odd">홀</button>
+  
+  <button id="even">짝</button>
+</body>
+</html>

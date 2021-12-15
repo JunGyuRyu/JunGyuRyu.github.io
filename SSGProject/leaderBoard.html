@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko"><head><link rel="stylesheet" href="leaderBoard.css">
+<meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0"/>
+<script>
+window.onload = function(){
+//플레이 타임 체크
+if(localStorage.getItem('playTime')){
+ var checkPlayTime = localStorage.getItem('playTime');
+ checkPlayTime = Number(checkPlayTime);
+ }
+var minute = Math.floor(checkPlayTime/60);
+var second = (checkPlayTime % 60);
+
+var Btable1= document.getElementById('1st');
+Btable1.innerHTML= minute+"분"+second+"초";
+
+
+
+
+
+
+
+
+var back = document.getElementById('back');
+back.onclick=function(){
+location.href="file:///C:/Users/fbwns/OneDrive%20-%20%EC%84%9C%EC%9A%B8%EA%B3%BC%ED%95%99%EA%B8%B0%EC%88%A0%EB%8C%80%ED%95%99%EA%B5%90/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/%EC%84%9C%EC%9A%B8%EA%B3%BC%EA%B8%B0%EB%8C%80/3%ED%95%99%EB%85%84%202%ED%95%99%EA%B8%B0/%EA%B3%A0%EA%B8%89%EC%9B%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/%ED%8C%80%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%EA%B9%83%ED%97%88%EB%B8%8C%20%EC%97%85%EB%A1%9C%EB%93%9C%EC%9A%A9/index.html";
+}
+
+}
+</script>
+</head>
+
+<body>
+<div><table width=100% style="border-collapse: collapse;text-align:center">
+  <tr id="title" ><th><font color="skyblue">클리어 타임</font></th></tr></table></div>
+
+<table id="board" style="border-collapse: collapse;text-align:center">
+  <th class="Btable" id="1st">00분 00초</th>
+  </tr>
+  </table>
+  
+<button id="back" width="150px;" height="200px">처음으로</button>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko"><head><link rel="stylesheet" href="index.css">
+<script>
+var audioM = new Audio('Mugunghwa.mp4');
+audioM.playbackRate=2;
+audioM.loop=true;
+var GetCaught = 0;
+var CheckClick=[0,0];
+
+window.onload = function(){
+var checkPlayTime = 0;
+var j =0;
+var timer = document.getElementById('timer');
+var musicStart = document.getElementById('musicStart');
+var musicStop = document.getElementById('musicStop');
+
+
+musicStart.onclick = function(){
+//로컬에 플레이타임 저장
+var playTime = setInterval(function(){
+checkPlayTime+=1;
+localStorage.setItem('playTime',checkPlayTime);
+},1000);
+
+
+  CheckClick[0]+=1;
+  if(CheckClick[0]==2){
+  alert('Dont Click This Twice');
+  window.location.reload();
+  }
+  audioM.play();
+   var timerGo = setInterval(function(){
+   timer.innerHTML=j;
+   timer.style.position="absolute";
+   timer.style.left=10+'px';
+   timer.style.top=130+'px';
+   j++;
+   if(j==700){
+   youngF.style.display = 'block';
+   youngB.style.display = 'none';
+   if(GetCaught ==1){
+   alert('You got caught!');
+  window.location.reload(); 
+  }
+  }else if(j==920){
+  youngF.style.display = 'none';
+  youngB.style.display = 'block';
+  }else if(j==1700){
+  youngF.style.display = 'block';
+  youngB.style.display = 'none';
+  if(GetCaught ==1){
+  alert('You got caught!');
+  window.location.reload();
+  }
+  }else if(j==1950){
+  youngF.style.display = 'none';
+  youngB.style.display = 'block';
+  }else if(j==2850){
+  youngF.style.display = 'block';
+  youngB.style.display = 'none';
+  if(GetCaught ==1){
+  alert('You got caught!');
+  window.location.reload();
+  }
+  }else if(j==3000){
+  youngF.style.display = 'none';
+  youngB.style.display = 'block';
+  }else if(j==3950){
+  youngF.style.display = 'block';
+  youngB.style.display = 'none';
+  if(GetCaught ==1){
+  alert('You got caught!');
+  window.location.reload();
+  }
+  }else if(j==4200){
+  youngF.style.display = 'none';
+  youngB.style.display = 'block';
+  }else if(j==4700){
+  youngF.style.display = 'block';
+  youngB.style.display = 'none';
+  if(GetCaught ==1){
+  alert('You got caught!');
+  window.location.reload();
+  }
+  }else if(j==5000){
+  youngF.style.display = 'none';
+  youngB.style.display = 'block';
+  }else if(j==5600){
+  youngF.style.display = 'block';
+  youngB.style.display = 'none';
+  if(GetCaught ==1){
+  alert('You got caught!');
+  window.location.reload();
+  }
+  }else if(j==6000){
+  youngF.style.display = 'none';
+  youngB.style.display = 'block';
+  }else if(j==6400){
+  youngF.style.display = 'block';
+  youngB.style.display = 'none';
+  if(GetCaught ==1){
+  alert('You got caught!');
+  window.location.reload();
+  }
+  }else if(j==6500){
+  youngF.style.display = 'block';
+  youngB.style.display = 'none';
+  j=-50;
+  }
+   else if(j==0){
+  youngF.style.display = 'none';
+  youngB.style.display = 'block';
+  }
+     musicStop.onclick = function(){
+     clearInterval(playTime);
+     
+     CheckClick[0]=0;
+     CheckClick[1]+=1;
+     audioM.pause();
+     clearInterval(timerGo);
+     }
+},1);
+}
+
+var i =0;
+var person = document.getElementById('person');
+ person.style.fontSize = '50px';
+ person.style.position = 'absolute';
+ person.style.left=i+'px';
+ person.style.top=200+'px';
+
+var btngo   = document.getElementById('btngo');
+var btnstop = document.getElementById('btnstop');
+
+btngo.onclick = function(){
+if(CheckClick[0]==0){
+alert('Game Start first!');
+window.location.reload();
+}
+CheckClick[1]+=1;
+if(CheckClick[1]==2){
+alert('Dont Click This Twice');
+window.location.reload();
+}
+    GetCaught =1;
+var going = setInterval(function(){
+  person.style.left = (i)+'px';
+  var checkI=i;
+      if( i >= 1300 ){
+          clearInterval(going);
+          audioM.pause();
+          alert('You Survived!');
+          location.href="dalgona.html";
+          }
+  i+=5;
+},100);
+    btnstop.onclick = function(){
+    CheckClick[1]=0;
+    GetCaught =0;
+    var stop = clearInterval(going);
+    }
+}
+
+var youngF=document.getElementById('youngF');
+var youngB=document.getElementById('youngB');
+youngB.style.left=1380+'px';
+youngB.style.top=200+'px';
+youngB.style.position = 'absolute';
+youngF.style.left=1380+'px';
+youngF.style.top=200+'px';
+youngF.style.position = 'absolute';
+youngF.style.display = 'none';
+}
+</script>
+</head>
+<body>
+<div><table height=100px width=100% style="border-collapse: collapse;text-align:center">
+  <tr id="name" ><th><font size="100%" color="orange">무궁화 꽃이 피었습니다</font></th></tr></table></div>
+
+
+<button id='btngo'>Go</button>
+<button id='btnstop'>Stop</button>
+<div id='person'>
+&nbsp o<br/>
+/ l＼<br/>
+/  ＼<br/>
+</div>
+
+<img id='youngF' src='youngF.jpg' width ='100'></img>
+<img id='youngB' src='youngB.jpg' width ='100'></img>
+<button id='musicStart'>Game Start</button>
+<button id='musicStop'>Game Pause</button>
+<h1 id="timer">000</h1>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+
+<div id="ExplainTable"><table height=100px width=100% style="border-collapse: collapse;text-align:center">
+  <tr><th><font size="100%" color="orange">Game Description</font></th></tr></table></div>
+<div id="Explain"><table height=100px width=100% style="border-collapse: collapse">
+<tr><th>
+Go -> move person<br/>
+Stop -> stop person<br/>
+Game Start -> start music & timer<br/>
+Game Pause -> pause music & timer<br/>
+※ If you move when she looks forward, you die. ※
+</th></tr></table></div>
+</body></html>
