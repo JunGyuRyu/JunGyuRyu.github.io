@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko"><head><link rel="stylesheet" href="GlassBridge.css">
+<meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0"/>
+<script>
+window.onload = function(){
+//플레이 타임 체크
+if(localStorage.getItem('playTime')){
+ var checkPlayTime = localStorage.getItem('playTime');
+ checkPlayTime = Number(checkPlayTime);
+ }
+var playTime = setInterval(function(){
+checkPlayTime+=1;
+localStorage.setItem('playTime',checkPlayTime);
+},1000);
+
+
+//목숨 표시
+var LifeLeft = 8;
+var Life=document.getElementById('Life');
+setInterval(function(){
+Life.innerHTML="Life: "+LifeLeft+"개 (0이 되면 실패)";},100);
+
+//유리를 배열로 가져오고 클릭시 하늘색으로 변경
+var ClickGlass =  document.querySelectorAll(".glasses");
+for(var i=0; i<ClickGlass.length; i++){
+ClickGlass[i].addEventListener("click",function(){
+this.style.color = 'white';
+this.style.background='skyblue';
+});}
+
+//0 혹은 1  생성해서 16개 배열에 넣기
+var RandomNum = [];
+var CheckStrong=[];
+CheckStrong.length=16;
+for(var j=0;j<8;j++){
+var RN = Math.floor(Math.random()*2);
+RandomNum.push(RN);
+if(RandomNum[j]==0){
+CheckStrong[j]=0;
+CheckStrong[j+8]=1;
+}else if(RandomNum[j]==1){
+CheckStrong[j]=1;
+CheckStrong[j+8]=0;
+}}
+
+var StepCount = 0;
+var StepCheck = [0,1,2,3,4,5,6,7,0,1,2,3,4,5,6,7];
+function Step(i){
+  //이전 유리 선택했는지 확인 (건너뛰기 방지)
+  if(StepCount < StepCheck[i]){
+  alert("Don't Cheat!");
+  window.location.reload();
+  }
+  else if(StepCount == StepCheck[i]){
+  console.log(StepCount);
+  StepCount = StepCheck[i]+1;
+ 
+  }
+  
+  // 1이면 강화유리 0이면 일반유리
+  switch (CheckStrong[i]){
+    case 1 :
+     if(StepCount == 8){
+  alert("모든 게임 클리어!");
+  location.href="leaderBoard.html";
+  };
+        break;
+    case 0:
+      LifeLeft -= 1;
+      alert("You Fell!");
+      ClickGlass[i].style.background = 'orange';
+      //목숨 0개 되면 처음부터 다시
+      if(LifeLeft==0){
+      alert("You Died!");
+      window.location.reload();
+      }
+      break;
+}
+}
+
+ClickGlass[0].onclick =function(){Step(0);}
+ClickGlass[1].onclick =function(){Step(1);}
+ClickGlass[2].onclick =function(){Step(2);}
+ClickGlass[3].onclick =function(){Step(3);}
+ClickGlass[4].onclick =function(){Step(4);}
+ClickGlass[5].onclick =function(){Step(5);}
+ClickGlass[6].onclick =function(){Step(6);}
+ClickGlass[7].onclick =function(){Step(7);}
+ClickGlass[8].onclick =function(){Step(8);}
+ClickGlass[9].onclick =function(){Step(9);}
+ClickGlass[10].onclick =function(){Step(10);}
+ClickGlass[11].onclick =function(){Step(11);}
+ClickGlass[12].onclick =function(){Step(12);}
+ClickGlass[13].onclick =function(){Step(13);}
+ClickGlass[14].onclick =function(){Step(14);}
+ClickGlass[15].onclick =function(){Step(15);}
+}
+</script>
+</head>
+
+<body>
+<div><table height=100px width=100% style="border-collapse: collapse;text-align:center">
+  <tr id="title" ><th><font size="100%" color="orange">다리 건너기</font></th></tr></table></div>
+
+<div><table height=70px width=500px style="border-collapse: collapse;text-align:center">
+<tr><th id="Life">Life: n개</th></tr></table></div>
+
+<div id="GlassTable"><table height=300px width=1500px style="border-collapse: collapse;text-align:center">
+<tr>
+<th id="StartPoint" class="Start"rowspan="2">StartPoint</th>
+<th id="glass1" class="glasses">Glass1</th>
+<th id="glass2" class="glasses">Glass2</th>
+<th id="glass3" class="glasses">Glass3</th>
+<th id="glass4" class="glasses">Glass4</th>
+<th id="glass5" class="glasses">Glass5</th>
+<th id="glass6" class="glasses">Glass6</th>
+<th id="glass7" class="glasses">Glass7</th>
+<th id="glass8" class="glasses">Glass8</th>
+<th id="EndPoint" class="End"rowspan="2">EndPoint</th></tr>
+
+<tr>
+<th id="glass9" class="glasses">Glass1</th>
+<th id="glass10" class="glasses">Glass2</th>
+<th id="glass11" class="glasses">Glass3</th>
+<th id="glass12" class="glasses">Glass4</th>
+<th id="glass13" class="glasses">Glass5</th>
+<th id="glass14" class="glasses">Glass6</th>
+<th id="glass15" class="glasses">Glass7</th>
+<th id="glass16" class="glasses">Glass8</th></tr>
+</table></div>
+
+<div id="DescriptionTable"><table height=65px width=100% style="border-collapse: collapse;text-align:center">
+  <tr><th><font size="100%" color="orange">Game Description</font></th></tr></table></div>
+<div id="Description"><table height=100px width=100% style="border-collapse: collapse">
+<tr><th>
+위 / 아래 중 하나의 유리 선택해서 클릭<br/>
+왼쪽부터 차례대로 클릭 (건너뛰면 처음부터 다시시작)<br/>
+이미 지나왔어도 이전 꺼 클릭해서 떨어지면 Life 차감, 이미 떨어졌던 부분 다시 클릭해도 Life 차감
+</th></tr></table></div>
+</body>
+</html>

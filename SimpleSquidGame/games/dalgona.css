@@ -1,0 +1,394 @@
+#title{
+	  background: #3f8;
+	  text-align: center;
+	  border: 2px solid #000;
+	}
+#GameEx{
+	  background: #3f8;
+	  text-align: center;
+	  border: 2px solid #000;
+	  font-size: 40px;
+	}
+#Ex{
+	  
+	  text-align: left;
+	  border: 2px solid #000;
+	  font-size: 20px
+	}
+
+#circle{
+position: absolute;
+top:0;
+left:0;
+}
+#triangle{
+position: absolute;
+top:0;
+left:0;
+}
+
+#CrackRate{
+position: absolute;
+top:10%;
+right:5%;
+border: 2px solid #000;
+font-size:30px;
+}
+
+#Time{
+position: absolute;
+top:20%;
+right:5%;
+border: 2px solid #000;
+font-size:30px;
+}
+
+#Clicked{
+position: absolute;
+top:30%;
+right:5%;
+border: 2px solid #000;
+font-size:30px;
+}
+
+
+#btns button{
+border: 1px solid #f8e0c0;
+background-color: #f8e0c0;
+color: black;
+padding: 7px;
+border-radius: 15px;
+}
+#btns button:hover{
+color: white;
+background-color: #f8d9b6;
+}
+
+#btn1{
+position: absolute;
+top: 50px;
+left: 786px;
+}
+#btn2{
+position: absolute;
+top: 70px;
+left: 776px;
+}
+#btn3{
+position: absolute;
+top: 90px;
+left: 766px;
+}
+#btn4{
+position: absolute;
+top: 110px;
+left: 756px;
+}
+#btn5{
+position: absolute;
+top: 130px;
+left: 746px;
+}
+#btn6{
+position: absolute;
+top: 150px;
+left: 736px;
+}
+#btn7{
+position: absolute;
+top: 170px;
+left: 726px;
+}
+#btn8{
+position: absolute;
+top: 190px;
+left: 716px;
+}
+#btn9{
+position: absolute;
+top: 210px;
+left: 706px;
+}#btn10{
+position: absolute;
+top: 230px;
+left: 696px;
+}
+#btn11{
+position: absolute;
+top: 250px;
+left: 686px;
+}
+#btn12{
+position: absolute;
+top: 270px;
+left: 676px;
+}
+#btn13{
+position: absolute;
+top: 290px;
+left: 666px;
+}
+#btn14{
+position: absolute;
+top: 310px;
+left: 656px;
+}#btn15{
+position: absolute;
+top: 330px;
+left: 646px;
+}#btn16{
+position: absolute;
+top: 350px;
+left: 636px;
+}
+#btn17{
+position: absolute;
+top: 370px;
+left: 626px;
+}
+#btn18{
+position: absolute;
+top: 390px;
+left: 616px;
+}
+#btn19{
+position: absolute;
+top: 410px;
+left: 606px;
+}
+#btn20{
+position: absolute;
+top: 430px;
+left: 596px;
+}
+#btn21{
+position: absolute;
+top: 450px;
+left: 586px;
+}#btn22{
+position: absolute;
+top: 470px;
+left: 576px;
+}
+#btn23{
+position: absolute;
+top: 490px;
+left: 566px;
+}
+#btn24{
+position: absolute;
+top: 510px;
+left: 556px;
+}
+#btn25{
+position: absolute;
+top: 510px;
+left: 581px;
+}
+#btn26{
+position: absolute;
+top: 510px;
+left: 606px;
+}#btn27{
+position: absolute;
+top: 510px;
+left: 631px;
+}#btn28{
+position: absolute;
+top: 510px;
+left: 656px;
+}
+#btn29{
+position: absolute;
+top: 510px;
+left: 681px;
+}
+#btn30{
+position: absolute;
+top: 510px;
+left: 706px;
+}
+#btn31{
+position: absolute;
+top: 510px;
+left: 731px;
+}
+#btn32{
+position: absolute;
+top: 510px;
+left: 756px;
+}
+#btn33{
+position: absolute;
+top: 510px;
+left: 781px;
+}#btn34{
+position: absolute;
+top: 510px;
+left: 806px;
+}
+#btn35{
+position: absolute;
+top: 510px;
+left: 831px;
+}
+#btn36{
+position: absolute;
+top: 510px;
+left: 856px;
+}
+#btn37{
+position: absolute;
+top: 510px;
+left: 881px;
+}#btn38{
+position: absolute;
+top: 510px;
+left: 906px;
+}#btn39{
+position: absolute;
+top: 510px;
+left: 931px;
+}
+#btn40{
+position: absolute;
+top: 510px;
+left: 956px;
+}
+#btn41{
+position: absolute;
+top: 510px;
+left: 981px;
+}
+#btn42{
+position: absolute;
+top: 510px;
+left: 1006px;
+}
+#btn43{
+position: absolute;
+top: 510px;
+left: 1031px;
+}
+#btn44{
+position: absolute;
+top: 490px;
+left: 1021px;
+}#btn45{
+position: absolute;
+top: 470px;
+left: 1011px;
+}
+#btn46{
+position: absolute;
+top: 450px;
+left: 1001px;
+}
+#btn47{
+position: absolute;
+top: 430px;
+left: 991px;
+}
+#btn48{
+position: absolute;
+top: 410px;
+left: 981px;
+}
+#btn49{
+position: absolute;
+top: 390px;
+left: 971px;
+}
+#btn50{
+position: absolute;
+top: 370px;
+left: 961px;
+}#btn51{
+position: absolute;
+top: 350px;
+left: 951px;
+}
+#btn52{
+position: absolute;
+top: 330px;
+left: 941px;
+}
+#btn53{
+position: absolute;
+top: 310px;
+left: 931px;
+}
+#btn54{
+position: absolute;
+top: 290px;
+left: 921px;
+}
+#btn55{
+position: absolute;
+top: 270px;
+left: 911px;
+}
+#btn56{
+position: absolute;
+top: 250px;
+left: 901px;
+}
+
+
+#btn57{
+position: absolute;
+top: 230px;
+left: 891px;
+}
+
+
+#btn58{
+position: absolute;
+top: 210px;
+left: 881px;
+}
+#btn59{
+position: absolute;
+top: 190px;
+left: 871px;
+}
+#btn60{
+position: absolute;
+top: 170px;
+left: 861px;
+}
+#btn61{
+position: absolute;
+top: 150px;
+left: 851px;
+}
+#btn62{
+position: absolute;
+top: 130px;
+left: 841px;
+}
+#btn63{
+position: absolute;
+top: 110px;
+left: 831px;
+}
+#btn64{
+position: absolute;
+top: 90px;
+left: 821px;
+}
+#btn65{
+position: absolute;
+top: 70px;
+left: 811px;
+}
+#btn66{
+position: absolute;
+top: 50px;
+left: 801px;
+}
+#btn67{
+position: absolute;
+top: 30px;
+left: 793px;
+}
