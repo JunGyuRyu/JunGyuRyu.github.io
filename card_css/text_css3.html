@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="overlay"></div>
+  <div class="card">
+    <div class="card-content"></div>
+  </div>
+</div>
+
+<script>
+  // .txt 파일 불러오기
+  fetch('todoList.txt')
+    .then(response => response.text())
+    .then(data => {
+      // 불러온 텍스트를 카드에 표시하기
+      document.querySelector('.card-content').innerText = data;
+    });
+
+  var container = document.querySelector('.container')
+  var overlay = document.querySelector('.overlay')
+  container.addEventListener('mousemove', function(e){
+    var x = e.offsetX
+    var y = e.offsetY
+    var rotateY = -1/5 * x + 20
+    var rotateX = 4/30 * y - 20
+
+    overlay.style = `background-position : ${x/5 + y/5}%; filter : opacity(${x/200}) brightness(1.2)`
+
+    container.style = `transform : perspective(350px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+  })
+
+  container.addEventListener('mouseout', function(){
+    overlay.style = 'filter : opacity(0)'
+    container.style = 'transform : perspective(350px) rotateY(0deg) rotateX(0deg)'
+  })
+</script>
+
+<style>
+  .container {
+    /* ... */
+  }
+  .overlay {
+    /* ... */
+  }
+  .card {
+    width: 220px; height: 310px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.1s;
+  }
+  .card-content {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
