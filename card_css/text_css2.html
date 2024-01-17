@@ -16,8 +16,8 @@
 
   var container = document.querySelector('.container')
   var overlay = document.querySelector('.overlay')
-  var cardContent = document.querySelector('.card-content')
-  container.addEventListener('mousemove', function(e){
+  var card = document.querySelector('.card')
+  card.addEventListener('mousemove', function(e){
     var x = e.offsetX
     var y = e.offsetY
     var rotateY = -1/5 * x + 20
@@ -26,35 +26,46 @@
     overlay.style = `background-position : ${x/5 + y/5}%; filter : opacity(${x/200}) brightness(1.2)`
 
     container.style = `transform : perspective(350px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
-    cardContent.style = `transform : perspective(350px) rotateX(${-rotateX}deg) rotateY(${-rotateY}deg)`
   })
 
-  container.addEventListener('mouseout', function(){
+  card.addEventListener('mouseout', function(){
     overlay.style = 'filter : opacity(0)'
     container.style = 'transform : perspective(350px) rotateY(0deg) rotateX(0deg)'
-    cardContent.style = 'transform : perspective(350px) rotateY(0deg) rotateX(0deg)'
   })
 </script>
 
 <style>
-  .card {
-    width: 220px; height: 310px;
-    padding: 10px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .container {
+    width: 220px; height: 310px; transition : all 0.1s;
+    position: relative;
+  }
+  .overlay {
+    position: absolute;
+    width: 220px;
+    height: 310px;
+    background: linear-gradient(105deg,
+    transparent 40%,
+    rgba(255, 219, 112, 0.8) 45%,
+    rgba(132, 50, 255 ,0.6) 50%,
+    transparent 54%);
+    filter: brightness(1.1) opacity(0.8);
+    mix-blend-mode: color-dodge;
+    background-size: 150% 150%;
+    background-position: 100%;
     transition: all 0.1s;
   }
+  .card {
+    width: 220px; height: 310px;
+    background-image: .card-content;
+    background-size: cover;
+  }
   .card-content {
-    width: 100%;
-    height: 100%;
+    width: 220px; height: 310px;
     overflow: auto;
     color: #000000;
     font-family: Arial, sans-serif;
     font-size: 14px;
     line-height: 1.5;
-    transition: all 0.1s;
     display: flex;
     align-items: center;
     justify-content: center;
